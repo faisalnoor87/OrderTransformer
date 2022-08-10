@@ -23,7 +23,7 @@ public class TransformerApplicationTests {
     private TransformerApplication app;
 
     @Test
-    public void ShouldVerifyExecutionOfOrderServiceAndWriterService(){
+    public void ShouldVerifyExecutionOfOrderServiceAndWriterService() {
         //Arrange
         var customerOrderView = CustomerOrderViewMockProvider.getCustomerOrderView();
         given(orderService.GetCustomerOrderView()).willReturn(customerOrderView);
@@ -37,7 +37,7 @@ public class TransformerApplicationTests {
     }
 
     @Test
-    public void ShouldThrowException_WhenOrderServiceReturnsError(){
+    public void ShouldThrowException_WhenOrderServiceReturnsError() {
         //Arrange
         given(orderService.GetCustomerOrderView()).willThrow(new RuntimeException());
 
@@ -47,7 +47,7 @@ public class TransformerApplicationTests {
     }
 
     @Test
-    public void ShouldThrowException_WhenWriterServiceReturnsError(){
+    public void ShouldThrowException_WhenWriterServiceReturnsError() {
         //Arrange
         var customerOrderView = CustomerOrderViewMockProvider.getCustomerOrderView();
         given(orderService.GetCustomerOrderView()).willReturn(customerOrderView);

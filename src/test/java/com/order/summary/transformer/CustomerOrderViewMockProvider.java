@@ -3,14 +3,14 @@ package com.order.summary.transformer;
 import java.util.List;
 
 public class CustomerOrderViewMockProvider {
-    public static CustomerOrderView getCustomerOrderView(){
+    public static CustomerOrderView getCustomerOrderView() {
         return CustomerOrderView.builder()
                 .customers(getCustomers())
                 .orders(getOrders())
                 .build();
     }
 
-    public static List<Customer> getCustomers(){
+    public static List<Customer> getCustomers() {
         var customer = Customer.builder()
                 .id("1")
                 .name("test")
@@ -20,7 +20,7 @@ public class CustomerOrderViewMockProvider {
         return List.of(customer);
     }
 
-    public static List<Order> getOrders(){
+    public static List<Order> getOrders() {
         var orderDetail = Order.OrderDetail.builder().price(10).item("hat").quantity(100).revenue(1000).build();
 
         var order = Order.builder()

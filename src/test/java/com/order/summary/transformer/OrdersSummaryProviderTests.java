@@ -72,7 +72,7 @@ public class OrdersSummaryProviderTests {
     }
 
     @Test
-    public void ShouldThrowException_WhenFileServiceReturnsError_WhenReadingFile() throws IOException{
+    public void ShouldThrowException_WhenFileServiceReturnsError_WhenReadingFile() throws IOException {
         //Arrange
         doThrow(new IOException()).when(file).readFile(anyString());
 
@@ -106,6 +106,6 @@ public class OrdersSummaryProviderTests {
                 .order(orderMap)
                 .build();
 
-        return new OrderSummary[]{ orderSummary };
+        return new OrderSummary[]{orderSummary};
     }
 }

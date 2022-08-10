@@ -22,8 +22,7 @@ public class CustomerOrderViewWriter implements IWriter {
             var fileName = "data-transformed.json"; //fileName should come from a config or an identifier should be passed by the client.
             var data = objectMapper.writeValueAsBytes(result);
             file.writeFile(fileName, data);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             log.error("Unable to write file.");
             throw new RuntimeException(); //TODO Implement Domain Exception to get the better view of the errors.
         }

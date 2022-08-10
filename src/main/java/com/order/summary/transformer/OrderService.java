@@ -44,7 +44,7 @@ public class OrderService implements IOrderService {
                 .build();
     }
 
-    private Order getOrder(OrderSummary orderSummary){
+    private Order getOrder(OrderSummary orderSummary) {
         var orders = orderSummary.getOrder().entrySet().stream().map(co -> {
             var productName = co.getKey();
             var quantity = co.getValue().getQuantity();
@@ -69,7 +69,7 @@ public class OrderService implements IOrderService {
                 .build();
     }
 
-    private Customer getCustomer(OrderSummary orderSummary){
+    private Customer getCustomer(OrderSummary orderSummary) {
         return Customer
                 .builder()
                 .id(orderSummary.getCustomer().getId())

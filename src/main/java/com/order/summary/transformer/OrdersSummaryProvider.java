@@ -25,8 +25,7 @@ public class OrdersSummaryProvider implements IOrderSummaryProvider {
         try {
             var data = file.readFile(fileName);
             orderSummaries = objectMapper.readValue(data, OrderSummary[].class);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             log.error("Unable to read file.");
             throw new RuntimeException(); //TODO Implement Domain Exception to get the better view of the errors.
         }

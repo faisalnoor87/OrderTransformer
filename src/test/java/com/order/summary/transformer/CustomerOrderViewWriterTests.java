@@ -37,7 +37,7 @@ public class CustomerOrderViewWriterTests {
     }
 
     @Test
-    public void ShouldWriteEmptyFile_WhenCustomerOrderViewIsNull() throws IOException{
+    public void ShouldWriteEmptyFile_WhenCustomerOrderViewIsNull() throws IOException {
         //Arrange
 
         //Act
@@ -48,7 +48,7 @@ public class CustomerOrderViewWriterTests {
     }
 
     @Test
-    public void ShouldThrowException_WhenUnableToWriteCustomerOrderViewToTheFile() throws IOException{
+    public void ShouldThrowException_WhenUnableToWriteCustomerOrderViewToTheFile() throws IOException {
         //Arrange
         var customerOrderView = CustomerOrderViewMockProvider.getCustomerOrderView();
         doThrow(new IOException()).when(file).writeFile(anyString(), any());

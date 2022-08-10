@@ -10,22 +10,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @Slf4j
 @RequiredArgsConstructor
 public class TransformerApplication implements CommandLineRunner {
-	private final IOrderService orderService;
-	private final IWriter writer;
+    private final IOrderService orderService;
+    private final IWriter writer;
 
-	public static void main(String[] args) {
-		SpringApplication.run(TransformerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TransformerApplication.class, args);
+    }
 
-	@Override
-	public void run(String... args) {
-		log.info("START : run");
+    @Override
+    public void run(String... args) {
+        log.info("START : run");
 
-		var data = orderService.GetCustomerOrderView();
+        var data = orderService.GetCustomerOrderView();
 
-		writer.writeCustomerOrderView(data);
+        writer.writeCustomerOrderView(data);
 
-		log.info("END : run");
-	}
+        log.info("END : run");
+    }
 }
 
